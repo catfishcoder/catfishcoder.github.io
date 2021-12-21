@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zyanjun</title>
-    <link>//codertac.github.io/</link>
+    <link>https://codertac.github.io/</link>
     <description>Recent content on zyanjun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Dec 2021 21:15:08 +0800</lastBuildDate><atom:link href="//codertac.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 21:15:08 +0800</lastBuildDate><atom:link href="https://codertac.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello-world</title>
-      <link>//codertac.github.io/post/helloworld/</link>
+      <link>https://codertac.github.io/post/helloworld/</link>
       <pubDate>Tue, 21 Dec 2021 21:15:08 +0800</pubDate>
       
-      <guid>//codertac.github.io/post/helloworld/</guid>
+      <guid>https://codertac.github.io/post/helloworld/</guid>
       <description>hello world</description>
     </item>
     
     <item>
       <title>First</title>
-      <link>//codertac.github.io/post/first/</link>
+      <link>https://codertac.github.io/post/first/</link>
       <pubDate>Tue, 21 Dec 2021 17:42:59 +0800</pubDate>
       
-      <guid>//codertac.github.io/post/first/</guid>
+      <guid>https://codertac.github.io/post/first/</guid>
       <description>hello world
    </description>
     </item>
     
     <item>
       <title></title>
-      <link>//codertac.github.io/about/</link>
+      <link>https://codertac.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//codertac.github.io/about/</guid>
+      <guid>https://codertac.github.io/about/</guid>
       <description>just coder</description>
     </item>
     
