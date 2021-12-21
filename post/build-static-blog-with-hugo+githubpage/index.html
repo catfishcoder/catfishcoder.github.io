@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="zyanjun" />
+	
+	
+	
+	<title>使用hugo&#43;githubpage搭建静态博客 ｜ zyanjun</title>
+	
+    
+    
+    <meta name="description" content="本来是想买个vps搭建博客的，但是国内的博客备案不仅麻烦，而且还不便宜，仅仅搭个博客的话属实有点划不来。所以自然而然就想到了githubpage,虽然有诸多限制，但对于我这样的偶尔心血来潮写个blog" />
+    
+
+    
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://codertac.github.io/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://codertac.github.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://codertac.github.io/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://codertac.github.io/css/highlight.css" />
+
+    
+    
+    <link rel="stylesheet" href="https://codertac.github.io/css/css/zozo.css" />
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://codertac.github.io/">
+                    <span>zyanjun</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">学无止境</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/codertac/codertac.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://codertac.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/post/build-static-blog-with-hugo&#43;githubpage/'>使用hugo&#43;githubpage搭建静态博客</a></h2>
+                        <span class="date">2021.12.21</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>本来是想买个vps搭建博客的，但是国内的博客备案不仅麻烦，而且还不便宜，仅仅搭个博客的话属实有点划不来。所以自然而然就想到了githubpage,虽然有诸多限制，但对于我这样的偶尔心血来潮写个blog来说是完全够用了</p>
+</blockquote>
+<h3 id="1前期准备">1.前期准备</h3>
+<ol>
+<li>
+<p>安装hugo
+我用的是manjarolinux，pacman直接就有hugo（pacman永远滴神！）</p>
+<p>安装命令：<code>sudo pacman install hugo</code>。</p>
+</li>
+<li>
+<p>创建github仓库
+利用githubpage创建静态博客对仓库名有要求，具体仓库名为：<code>username.github.io</code>，其他默认就行。</p>
+</li>
+</ol>
+<h3 id="2开始搭建">2.开始搭建</h3>
+<ol>
+<li>初始化，在你存放博客的目录执行：<code>hugo new site &quot;blogname&quot;</code>，此时会创建一个名字为<em>blogname</em>的文件夹。</li>
+<li>创建一个文章<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。在<em>blogname</em>中执行：<code>hugo new post/article.md</code>,会在*/blogname/content/post/中生成指定文件，在这进行编辑，编辑完成之后执行：<code>hugo -t &quot;themename&quot;</code>,这一步是将文章转换为静态页面。</li>
+<li>选择主题，这个因人而异，我用的是<a href="https://github.com/varkai/hugo-theme-zozo">这个</a>,把主题clone到*/blogname/theme/目录下。</li>
+<li>编辑config.toml，这个的配置在相应主题的wiki下有说明。注意baseurl要改成自己的。</li>
+<li>此时已经搭建好了本地博客，就可以在本地进行调试了，具体命令为：<code>hugo server -D</code>，浏览器访问<code>//localhost:1313</code>预览页面<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</li>
+</ol>
+<h3 id="4使用githubpage访问博客">4.使用githubpage访问博客</h3>
+<ol>
+<li>
+<p>初始化一个本地仓库：cd到 */blogname/public/执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init	//初始化git仓库
+git add .	//将所有文件添加到暂存区
+git commit -m <span class="s2">&#34;message&#34;</span>	//提交
+git remote add origin master <span class="s2">&#34;remoteURL&#34;</span> 	//链接到远程仓库
+
+</code></pre></div><p>``</p>
+</li>
+<li>
+<p>等几分钟就可以用<code>username.github.io</code>访问了<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。</p>
+</li>
+</ol>
+<h3 id="5其他">5.其他</h3>
+<p>为了以后方便编写blog,建议简化写个脚本简化push过程，具体如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> -e <span class="s2">&#34;auto push&#34;</span>
+<span class="c1"># Build the hugo project</span>
+hugo -t hugo-theme-zozo-master
+<span class="c1"># Go to Public</span>
+<span class="nb">cd</span> public
+<span class="c1"># Add all</span>
+git add .
+<span class="c1"># Commit</span>
+git commit -m <span class="s2">&#34;Commit by autopush.sh&#34;</span>
+<span class="c1"># Push</span>
+git push origin master
+<span class="c1"># Back</span>
+<span class="nb">cd</span> ..
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>一种说法是如果不创建第一个文章就不能在本地或者远程预览页面。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>如果显示1313端口被占用，就把占用端口的进程杀掉。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>关于本地可以加载css,js。远程不行的解决办法<a href="https://github.com/kakawait/hugo-tranquilpeak-theme/issues/137">见此</a>。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+                    <div class="post_footer">
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        奋斗途中，不轻言放弃
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://codertac.github.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://codertac.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://codertac.github.io/js/fancybox.min.js"></script>
+<script src="https://codertac.github.io/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>
