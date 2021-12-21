@@ -4,15 +4,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="" />
+    <meta name="author" content="zyanjun" />
 	
 	
 	
-	<title>404 Page not found ｜ My New Hugo Site</title>
+	<title>404 Page not found ｜ zyanjun</title>
 	
     
+    
+    <meta name="description" content="Hugo theme zozo." />
     
 
+    
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
     
 
 	
@@ -35,6 +40,18 @@
     <div class="site_nav" id="site_nav">
         <ul>
             
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
         </ul>
     </div>
     <div class="menu_icon">
@@ -46,13 +63,17 @@
         <div class="site_title">
             <h1>
                 <a href="http://codertac.github.io/">
-                    <span>My New Hugo Site</span>
+                    <span>zyanjun</span>
                 </a>
             </h1>
         </div>
         <div class="description">
-            <p class="sub_title"></p>
+            <p class="sub_title">学无止境</p>
             <div class="my_socials">
+                
+                
+                <a href="https://github.com/codertac/codertac.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
                 
                 <a href="http://codertac.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
                         class="ri-rss-fill"></i></a>
@@ -84,6 +105,43 @@
 <script src="http://codertac.github.io/js/fancybox.min.js"></script>
 <script src="http://codertac.github.io/js/zozo.js"></script>
 
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
 
 
 

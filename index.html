@@ -5,19 +5,24 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="" />
+    <meta name="author" content="zyanjun" />
 	
 	
 	
-	<title>My New Hugo Site  </title>
+	<title>zyanjun ｜ 学无止境 </title>
 	
     
+    
+    <meta name="description" content="Hugo theme zozo." />
     
 
     
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
+    
 
 	
-	<link rel="alternate" type="application/rss+xml" href="http://codertac.github.io/index.xml" title="My New Hugo Site" />
+	<link rel="alternate" type="application/rss+xml" href="http://codertac.github.io/index.xml" title="zyanjun" />
     
     
     <link rel="shortcut icon" href="http://codertac.github.io/images/favicon.ico" />
@@ -38,6 +43,18 @@
     <div class="site_nav" id="site_nav">
         <ul>
             
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
         </ul>
     </div>
     <div class="menu_icon">
@@ -49,13 +66,17 @@
         <div class="site_title">
             <h1>
                 <a href="http://codertac.github.io/">
-                    <span>My New Hugo Site</span>
+                    <span>zyanjun</span>
                 </a>
             </h1>
         </div>
         <div class="description">
-            <p class="sub_title"></p>
+            <p class="sub_title">学无止境</p>
             <div class="my_socials">
+                
+                
+                <a href="https://github.com/codertac/codertac.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
                 
                 <a href="http://codertac.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
                         class="ri-rss-fill"></i></a>
@@ -65,6 +86,30 @@
 </div>
         <div class="content">
             
+
+<div class="post animated fadeInDown">
+    <div class="post_title">
+        <h2><a href='/post/first/'>First</a></h2>
+    </div>
+    
+    <div class="list">
+        <div class="post_content markdown">
+            <p>hello world......</p>
+        </div>
+    </div>
+    
+    <div class="post_footer">
+        <div class="meta">
+            <div class="info">
+                <span class="field">
+                    <i class="ri-map-pin-time-line"></i>
+                    <span class="date">2021.12.21</span>
+                </span>
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="pagination">
@@ -87,6 +132,43 @@
 <script src="http://codertac.github.io/js/fancybox.min.js"></script>
 <script src="http://codertac.github.io/js/zozo.js"></script>
 
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
 
 
 
