@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Dec 2021 21:15:08 +0800</lastBuildDate><atom:link href="https://codertac.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello-world</title>
-      <link>https://codertac.github.io/post/helloworld/</link>
+      <title>使用hugo&#43;githubpage搭建静态博客</title>
+      <link>https://codertac.github.io/post/%E4%BD%BF%E7%94%A8hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Tue, 21 Dec 2021 21:15:08 +0800</pubDate>
       
-      <guid>https://codertac.github.io/post/helloworld/</guid>
-      <description>hello world</description>
+      <guid>https://codertac.github.io/post/%E4%BD%BF%E7%94%A8hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
+      <description>利用hugo+githubpage搭建静态博客 本来是想买个vps搭建博客的，但是国内的博客备案不仅麻烦，而且还不便宜，仅仅搭个博客的话属实有点划不来。所以自然而然就想到了githubpage,虽然有诸</description>
     </item>
     
     <item>

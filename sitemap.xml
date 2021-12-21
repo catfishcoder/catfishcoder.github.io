@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://codertac.github.io/post/helloworld/</loc>
-    <lastmod>2021-12-21T21:15:08+08:00</lastmod>
-  </url><url>
     <loc>https://codertac.github.io/post/</loc>
     <lastmod>2021-12-21T21:15:08+08:00</lastmod>
   </url><url>
     <loc>https://codertac.github.io/</loc>
+    <lastmod>2021-12-21T21:15:08+08:00</lastmod>
+  </url><url>
+    <loc>https://codertac.github.io/post/%E4%BD%BF%E7%94%A8hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-12-21T21:15:08+08:00</lastmod>
   </url><url>
     <loc>https://codertac.github.io/post/first/</loc>
