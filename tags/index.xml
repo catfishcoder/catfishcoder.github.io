@@ -5,6 +5,16 @@
     <link>https://codertac.github.io/tags/</link>
     <description>Recent content in Tags on zyanjun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://codertac.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Dec 2021 21:15:08 +0800</lastBuildDate><atom:link href="https://codertac.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://codertac.github.io/tags/blog/</link>
+      <pubDate>Tue, 21 Dec 2021 21:15:08 +0800</pubDate>
+      
+      <guid>https://codertac.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on zyanjun</title>
+    <link>https://codertac.github.io/tags/blog/</link>
+    <description>Recent content in blog on zyanjun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Dec 2021 21:15:08 +0800</lastBuildDate><atom:link href="https://codertac.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用hugo&#43;githubpage搭建静态博客</title>
+      <link>https://codertac.github.io/post/build-static-blog-with-hugo&#43;githubpage/</link>
+      <pubDate>Tue, 21 Dec 2021 21:15:08 +0800</pubDate>
+      
+      <guid>https://codertac.github.io/post/build-static-blog-with-hugo&#43;githubpage/</guid>
+      <description>本来是想买个vps搭建博客的，但是国内的博客备案不仅麻烦，而且还不便宜，仅仅搭个博客的话属实有点划不来。所以自然而然就想到了githubpage,虽然有诸多限制，但对于我这样的偶尔心血来潮写个blog</description>
+    </item>
+    
+  </channel>
+</rss>
