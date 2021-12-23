@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="zyanjun" />
+	
+	
+	
+	<title>C&#43;&#43;_day1 ｜ zyanjun</title>
+	
+    
+    
+    <meta name="description" content="1.开始 1.1 一个简单的C&#43;&#43;程序 #include&amp;lt;iostream&amp;gt;int main(){ std::cout &amp;lt;&amp;lt; &amp;#34;hello world&amp;#34; &amp;lt;&amp;lt; std::endl; return 0; } #include&amp;lt;iostream&amp;gt;：预处理命令，在程序的预处理阶段将指定的标准库复制到当前文件中； 函数：包括返回类型，函数名，形参列表" />
+    
+
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://catfishcoder.github.io/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/highlight.css" />
+
+    
+    
+    <link rel="stylesheet" href="https://catfishcoder.github.io/css/css/zozo.css" />
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://catfishcoder.github.io/">
+                    <span>zyanjun</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">学无止境</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/catfishcoder/catfishcoder.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://catfishcoder.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/post/cpp_day1/'>C&#43;&#43;_day1</a></h2>
+                        <span class="date">2021.12.23</span>
+                    </div>
+                    <div class="post_content markdown"><h1 id="1开始">1.开始</h1>
+<h2 id="11-一个简单的c程序">1.1 一个简单的C++程序</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;hello world&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li><code>#include&lt;iostream&gt;</code>：预处理命令，在程序的预处理阶段将指定的标准库复制到当前文件中；</li>
+<li>函数：包括<strong>返回类型</strong>，<strong>函数名</strong>，<strong>形参列表</strong>， <strong>函数体</strong>四部分:
+<ul>
+<li>main函数的返回类型必须为<code>int</code>，main函数的返回值被用来指示状态，0表示成功，非0的返回由系统定义;</li>
+<li>函数名建议驼峰命名法;</li>
+<li>形参的值可以在形参列表中初始化;</li>
+<li>用花括号括起来的部分称为函数体;</li>
+</ul>
+</li>
+<li>命名空间：命名空间可以避免使用不同库中相同名字导致的冲突标准库中定义的所有名字都在命名空间std中</li>
+</ul>
+<h2 id="12-输入输出">1.2 输入输出</h2>
+<ul>
+<li>C++本身没有定义任何输入输出，而是用标准库来提供IO机制；</li>
+<li><code>iostream</code>标准库提供<code>istream</code>和<code>ostream</code>两个基础类型，表示输入流和输出流，一个流就是一个字符序列；</li>
+<li>标准库定义了四个IO对象：<code>cin</code>标准输入、<code>cout</code>标准输出、<code>cerr</code>标准错误输出、<code>clog</code>日志；</li>
+<li>输出运算符<code>&lt;&lt;</code>，将右边的运算对象写入到左边，注意左侧的运算对象必须是一个ostream对象；</li>
+<li>输入运算符<code>&gt;&gt;</code>类似</li>
+<li><strong>缓冲区</strong>：每个输出流都管理一个缓冲区，用来保存程序读写的数据。字符在串可能立即打印出来，但也有可能被操作系统保存在缓冲区中，随后再打印。有了缓冲机制，操作系统就可以将程序的多个输出操作组合成单一的系统级写操作。由于设备的写操作可能很耗时，允许操作系统将多个输出操作组合为单一的设备写操作可以带来很大的性能提升。缓冲刷新的原因有很多，程序正常结束，作为main函数return操作的一部分，缓冲区被刷新；缓冲区满时刷新缓冲区，使用操作符如<code>endl</code>显式刷新缓冲区等；</li>
+</ul>
+<h2 id="13-控制语句">1.3 控制语句</h2>
+<h3 id="131-循环">1.3.1 循环</h3>
+<ul>
+<li>while循环</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>            <span class="c1">//如果为真，就执行语句
+</span><span class="c1"></span>	<span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>do..while循环</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">do</span><span class="p">{</span>                         <span class="c1">//先执行循环再进行判断
+</span><span class="c1"></span>	<span class="n">statements</span><span class="p">;</span>
+<span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</code></pre></div><ul>
+<li>for循环
+<ul>
+<li>for循环的控制流
+<ul>
+<li><strong>init</strong> 会首先被执行，且只会执行一次。这一步允许您声明并初始化任何循环控制变量。您也可以不在这里写任何语句，只要有一个分号出现即可。</li>
+<li>接下来，会判断 <strong>condition</strong>。如果为真，则执行循环主体。如果为假，则不执行循环主体，且控制流会跳转到紧接着 for 循环的下一条语句。</li>
+<li>在执行完 for 循环主体后，控制流会跳回上面的 <strong>increment</strong> 语句。该语句允许您更新循环控制变量。该语句可以留空，只要在条件后有一个分号出现即可。</li>
+<li>条件再次被判断。如果为真，则执行循环，这个过程会不断重复（循环主体，然后增加步值，再然后重新判断条件）。在条件变为假时，for 循环终止。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">for</span><span class="p">(</span> <span class="n">init</span><span class="p">;</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span><span class="p">){</span>
+	<span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div></li>
+<li>循环控制语句
+<ul>
+<li>break语句：终止 <strong>loop</strong> 或 <strong>switch</strong> 语句，程序流将继续执行紧接着 loop 或 switch 的下一条语句。</li>
+<li>continue语句：引起循环跳过主体的剩余部分，立即重新开始测试条件。</li>
+<li>goto语句：将控制转移到被标记的语句。但是不建议在程序中使用 goto 语句。</li>
+</ul>
+</li>
+</ul>
+<h3 id="132-判断">1.3.2 判断</h3>
+<ul>
+<li>if语句</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">if</span><span class="p">(</span><span class="n">boolean_expression</span><span class="p">){</span>
+	<span class="n">statement1</span><span class="p">;</span>                    <span class="c1">//如果条件为真就执行语句1
+</span><span class="c1"></span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+	<span class="n">statement2</span><span class="err">；</span>                   <span class="c1">//如果条件为假就执行语句2
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><ul>
+<li>switch语句
+<ul>
+<li>switch必须遵循以下规则
+<ul>
+<li><strong>switch</strong> 语句中的 <strong>expression</strong> 必须是一个整型或枚举类型，或者是一个 class 类型，其中 class 有一个单一的转换函数将其转换为整型或枚举类型。</li>
+<li>在一个 switch 中可以有任意数量的 case 语句。每个 case 后跟一个要比较的值和一个冒号。</li>
+<li>case 的 <strong>constant-expression</strong> 必须与 switch 中的变量具有相同的数据类型，且必须是一个常量或字面量。</li>
+<li>当被测试的变量等于 case 中的常量时，case 后跟的语句将被执行，直到遇到 <strong>break</strong> 语句为止。</li>
+<li>当遇到 <strong>break</strong> 语句时，switch 终止，控制流将跳转到 switch 语句后的下一行。</li>
+<li>不是每一个 case 都需要包含 <strong>break</strong>。如果 case 语句不包含 <strong>break</strong>，控制流将会 <em>继续</em> 后续的 case，直到遇到 break 为止。</li>
+<li>一个 <strong>switch</strong> 语句可以有一个可选的 <strong>default</strong> case，出现在 switch 的结尾。default case 可用于在上面所有 case 都不为真时执行一个任务。default case 中的 <strong>break</strong> 语句不是必需的。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">switch</span><span class="p">(</span><span class="n">expression</span><span class="p">){</span>
+	<span class="k">case</span> <span class="n">constant</span><span class="o">-</span><span class="nl">expression</span> <span class="p">:</span> 
+	<span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+	<span class="k">break</span><span class="p">;</span>    <span class="c1">// 可选的 
+</span><span class="c1"></span>	<span class="k">case</span> <span class="n">constant</span><span class="o">-</span><span class="nl">expression</span> <span class="p">:</span> 
+	<span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> 
+	<span class="k">break</span><span class="p">;</span>    <span class="c1">//可选的 
+</span><span class="c1"></span>	<span class="c1">//您可以有任意数量的 case 语句
+</span><span class="c1"></span>	<span class="k">default</span> <span class="o">:</span> <span class="c1">// 可选的 
+</span><span class="c1"></span>	<span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="14-类简介">1.4 类简介</h2>
+<ul>
+<li>通过定义类来定义一个数据结构（相互之间存在一种或多种特定关系的数据元素的集合）</li>
+<li>定义一个类，本质上是定义一个数据类型的蓝图。这实际上并没有定义任何数据，但它定义了类的名称意味着什么，也就是说，它定义了类的对象包括了什么，以及可以在这个对象上执行哪些操作。</li>
+<li>类用于指定对象的形式，它包含了数据表示法和用于处理数据的方法。类中的数据和方法称为类的成员。函数在一个类中被称为类的成员。
+
+
+<div class="fancybox">
+<a data-fancybox="gallery" href="https://gitee.com/zyanjun/img_service/raw/master/img/cpp_object_class.png">
+<img src="https://gitee.com/zyanjun/img_service/raw/master/img/cpp_object_class.png" alt="类"  />
+</a>
+</div>
+
+</li>
+<li>通过使用<code>.</code>操作符来访问类的成员</li>
+</ul>
+<h2 id="15-编译运行程序">1.5 编译运行程序</h2>
+<p>在linux中使用g++来编译C++程序，具体命令为:<code>g++ source.cpp</code>，默认生成的可执行文件名为<code>a.out</code>,使用<code>-o</code>参数指定文件名</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://catfishcoder.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        奋斗途中，不轻言放弃
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://catfishcoder.github.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://catfishcoder.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://catfishcoder.github.io/js/fancybox.min.js"></script>
+<script src="https://catfishcoder.github.io/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>
