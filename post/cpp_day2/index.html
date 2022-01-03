@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="zyanjun" />
+	
+	
+	
+	<title>C&#43;&#43;_day2 ｜ zyanjun</title>
+	
+    
+    
+    <meta name="description" content="2. 变量和基本类型 2.1 基本内置类型 C&#43;&#43;本身定义了一套算数类型和空类型(void),算数类型包括字符、整型、布尔值和浮点数，空类型不对应具体的值 在不同的机器上算数类型的具体大小也不相同，C&#43;&#43;只定义了最小" />
+    
+
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://catfishcoder.github.io/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/highlight.css" />
+
+    
+    
+    <link rel="stylesheet" href="https://catfishcoder.github.io/css/css/zozo.css" />
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://catfishcoder.github.io/">
+                    <span>zyanjun</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">学无止境</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/catfishcoder/catfishcoder.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://catfishcoder.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/post/cpp_day2/'>C&#43;&#43;_day2</a></h2>
+                        <span class="date">2021.12.28</span>
+                    </div>
+                    <div class="post_content markdown"><h1 id="2-变量和基本类型">2. 变量和基本类型</h1>
+<h2 id="21-基本内置类型">2.1 基本内置类型</h2>
+<blockquote>
+<p>C++本身定义了一套算数类型和空类型(void),算数类型包括字符、整型、布尔值和浮点数，空类型不对应具体的值
+在不同的机器上算数类型的具体大小也不相同，C++只定义了最小尺寸</p>
+</blockquote>
+<h3 id="211-算数类型">2.1.1 算数类型</h3>
+<p>(以下示例是在64位机上)</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>最小尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>整形</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整形</td>
+<td>64位</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>长长整形</td>
+<td>64位</td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符型</td>
+<td>8位</td>
+</tr>
+<tr>
+<td>wchar_t</td>
+<td>宽字符</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>char16_t</td>
+<td>Unicode字符</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>char32_t</td>
+<td>Unicode字符</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>float</td>
+<td>单精度浮点型</td>
+<td>32位，6位有效数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点型</td>
+<td>64位，10位有效数字</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>扩展精度浮点型</td>
+<td>128位，10位有效数字</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>布尔类型</td>
+<td>8位</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>一个char类型应该保证能够表示任意字符对应的数字值</li>
+<li>在C++中，一个int至少和一个short一样大；一个long至少和一个int一样大；一个long long至少和一个long一样大</li>
+</ul>
+<p><strong>带符号类型和无符号类型</strong>
++ 除了布尔类型和拓展的字符型之外，其他的整形可以划分为带符号的(signed)和无符号的(unsigned)，带符号的可以表示正数、负数和零；无符号类型仅能表示大于零的值
++ 类型int、short、long、long long、都是带符号的，在这些类型名前添加unsigned来声明无符号数。类型unsigned int可以缩写为unsigned.
++ 与整形不同，字符型被分为三种：char、signed char、unsigned char.这三种并不一样，但表现形式只有带符号和无符号两种。其中char的类型是哪一种由编译器决定
++ 无符号类型的所有比特都用来储存值，例如8比特的unsigned char可以表示0-255之间的值，而8比特的signed char可以表示-128 - 128之间的值</p>
+<p><strong>如何选择类型</strong></p>
+<p><em><strong>对不同的数据应该选择不同的数据类型，从而简化选择的过程</strong></em>
+- 如果明知其值不可能为负，则应该选择无符号类型
+- 使用int进行整数运算，short通常太短而long通常和int有一样的尺寸，如果数值超过的int的范围，则应该选择long long类型
+- 在算数表达式中不要使用char或者bool类型，因为在某些编译器中char是无符号的，在另一些编译器中是带符号的，如果需要不大的整数应该使用signed char或者unsigned char
+- 执行浮点运算时，通常使用double,因为float通常精度不够而且双精度浮点数和单精度浮点数的计算代价相差无几</p>
+<p><strong>基本内置类型的机器实现</strong></p>
+<ul>
+<li>计算机以比特序列来存储数据，大多数计算机以2的整数次幂作为块来处理内存，可寻址的最小内存块称为<strong>字节(byte)</strong>，存储的基本单元称为<strong>字(word)</strong>,一个字包含几个字节，大多数计算机将每一个字节和一个数字（称为地址）关联起来，</li>
+</ul>
+<h3 id="212-类型转换">2.1.2 类型转换</h3>
+<p><em><strong>对象的类型定义了对象能够包含的数据和能参与的运算。当程序的某处使用了某种类型而对象应该取另一种类型时程序会自动进行类型转换，具体过程如下</strong></em>
++ 当把一个非布尔类型的算数值赋给布尔类型时，任何非零的数都为真，零为假;
++ 当把一个浮点数赋给一个整数时，小数点之后的位将被舍弃;
++ 当给一个无符号类型的数一个超出其表示范围的值时，结果是初始值对无符号类型表示数值总数取模之后的余数
++ 当给一个带符号类型的数一个超出其表示范围的值时，结果是未定义的;</p>
+<p><strong>总结：避免无法预知和依赖实现环境的行为</strong></p>
+<h3 id="213-字面值常量">2.1.3 字面值常量</h3>
+<p><em><strong>形如 42 的值被称为字面值常量(literal)，叫字面值是因为只能用值来称呼它，常量表示其不能被修改。每种字面值常量都表示一种数据类型</strong></em></p>
+<ol>
+<li>
+<p><strong>整形和浮点型字面值：</strong></p>
+<ol>
+<li>十进制字面值的类型是int、long、long long中能容纳其数值的尺寸最小者；八进制和十六进制字面值的类型是int, unsigned int, long, unsigned long, long long, unsigned long long中能容纳其数值的尺寸最小者，类型short没有对应的字面值</li>
+<li>尽管十进制字面值可以存储在带符号数据类型中，但是严格来说十进制字面值不会是负数，如果使用了一个形如 -42 的负十进制字面值，那么负号并不在字面值之内，其作用仅是对字面值取反而已</li>
+<li>浮点型字面值表示为一个小数或以科学计数法表示的指数</li>
+</ol>
+</li>
+<li>
+<p><strong>字符和字符串字面值</strong></p>
+<ol>
+<li>由单引号括起来的一个字符称为char型字面值，双引号括起来的零个或多个字符称为字符串字面值</li>
+<li>字符串字面值的类型实际上是由常量字符构成的数组，编译器在每个字符串的结尾添加一个空字符('\0'),因此字符串字面值的实际大小比其内容大1</li>
+</ol>
+</li>
+<li>
+<p><strong>布尔字面值和指针字面值</strong>
+true和false是布尔类型的字面值；nullptr是指针类型的字面值</p>
+</li>
+<li>
+<p><strong>转义序列</strong></p>
+</li>
+<li>
+<p>有两类字符并不能直接使用，一类是<strong>不可打印字符(nonprintable)</strong>，一类是在C++语言中有特殊含义的字符。在这种情况下需要用到<strong>转译序列(escape sequence)</strong> 来表示，转译序列以反斜杠作为开始</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th style="text-align:center">转译序列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>换行符</td>
+<td style="text-align:center"><code>\n</code></td>
+</tr>
+<tr>
+<td>横向制表符</td>
+<td style="text-align:center"><code>\t</code></td>
+</tr>
+<tr>
+<td>响铃</td>
+<td style="text-align:center"><code>\a</code></td>
+</tr>
+<tr>
+<td>纵向制表符</td>
+<td style="text-align:center"><code>\v</code></td>
+</tr>
+<tr>
+<td>退格符</td>
+<td style="text-align:center"><code>\b</code></td>
+</tr>
+<tr>
+<td>双引号</td>
+<td style="text-align:center"><code>\&quot;</code></td>
+</tr>
+<tr>
+<td>单引号</td>
+<td style="text-align:center"><code>\'</code></td>
+</tr>
+<tr>
+<td>反斜线</td>
+<td style="text-align:center"><code>\\</code></td>
+</tr>
+<tr>
+<td>问号</td>
+<td style="text-align:center"><code>\?</code></td>
+</tr>
+<tr>
+<td>回车符</td>
+<td style="text-align:center"><code>\r</code></td>
+</tr>
+<tr>
+<td>进纸符</td>
+<td style="text-align:center"><code>\f</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>指定字面值的类型</strong></p>
+</li>
+<li>
+<p>字符和字符串字面值</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>含义</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u</td>
+<td>Unicode16字符</td>
+<td>char16_t</td>
+</tr>
+<tr>
+<td>U</td>
+<td>Unicode32字符</td>
+<td>char32_t</td>
+</tr>
+<tr>
+<td>L</td>
+<td>宽字符</td>
+<td>wchar_t</td>
+</tr>
+<tr>
+<td>u8</td>
+<td>UTF-8(仅用于字符串字面值常量)</td>
+<td>char</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>整型字面值</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>后缀</th>
+<th>最小匹配类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u或者U</td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td>l或者L</td>
+<td>long</td>
+</tr>
+<tr>
+<td>ll或者LL</td>
+<td>long long</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>浮点型字面值</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>后缀</th>
+<th>最小匹配类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f或者F</td>
+<td>float</td>
+</tr>
+<tr>
+<td>l或者L</td>
+<td>long double</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-变量">2.2 变量</h2>
+<p><em><strong>变量提供一个具名的、可供程序操作的存储空间，对C++程序员来说，“变量(variable)和对象(object)一般而言是相等的</strong></em></p>
+<h3 id="221-变量定义">2.2.1 变量定义</h3>
+<p><code>类型说明符 变量名 [= 初始值]</code></p>
+<ul>
+<li><strong>初始值</strong>：当对象在创建时获得一个特定的值，对象就被初始化了。</li>
+<li><strong>特别注意，初始化中的等号跟赋值中的等号完全不同。初始化的含义是在创建变量时赋予其一个初始值。而赋值的含义是把对象当前的值擦除，而以一个新值代替。</strong></li>
+<li><strong>列表初始化(C11新标准)</strong>：<code>type variable_name{value}</code>, 当用于内置类型的变量时，如果使用列表初始化且初始值存在丢失信息的风险时，编译器会报错</li>
+<li><strong>默认初始化</strong>:如果定义变量时没有指定初值，则变量被默认初始化。一个未被初始化的内置类型变量的值是未定义的；而每个类各自决定其初始化对象的方式</li>
+<li>函数体外部定义的变量一般存放在固定地址中，而函数体内部定义的变量并非如此</li>
+</ul>
+<h3 id="222-变量的声明和定义">2.2.2 变量的声明和定义</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//声明i
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">j</span><span class="p">;</span> <span class="c1">//声明并定义j
+</span><span class="c1"></span><span class="k">extern</span> <span class="kt">double</span> <span class="n">p</span> <span class="o">=</span> <span class="mf">3.1415</span> <span class="c1">//定义
+</span></code></pre></div><ol>
+<li>为了支持分离式编译，C++语言将声明和定义区分开。<strong>声明(declaration)</strong> 使得名字为程序所知，一个文件如果使用别处定义的名字则必须包含那个名字的声明。而<strong>定义(definition)</strong> 负责创建与名字关联的实体。</li>
+<li>如果想声明一个变量需要在变量名前添加关键字<code>extern</code>,extern语句如果包含初始化就不再是声明，而是变成了定义</li>
+<li>变量只能被定义一次，但可以多次声明</li>
+</ol>
+<h3 id="223-标识符">2.2.3 标识符</h3>
+<ol>
+<li>C++的标识符由数字、字母、下划线组成，其中必须以字母或下划线开头，标识符对长度没有限制但对大小写敏感;</li>
+<li>不能使用C++关键字、不能出现两个连续的下划线、不能以下划线紧连大写字母、定义在函数体外的标识符不能以下划线开头</li>
+<li>变量命名规范
+<ol>
+<li>标识符要能体现实际含义</li>
+<li>变量名一般用小写字母，不能使用形如Index或者INDEX</li>
+<li>用户自定的类型一般以大写字母开头，如Sale_item</li>
+<li>如果标识符由多个单词组成，则单词之间应该有明显区分，如student_loan或StudentLoan</li>
+</ol>
+</li>
+</ol>
+<h3 id="224-名字的作用域">2.2.4 名字的作用域</h3>
+<p>在程序中，名字指向一个特定的实体：变量、函数、类型等，而<strong>作用域(scope)</strong> 限制了名字的有效区域，名字的有效区域始于名字的声明语句，以声明语句所在的作用域末端结束。作用域以花括号分隔。</p>
+<p><strong>全局作用域和块作用域</strong>
+1. 定义在所有花括号之外的名字具有全局作用域，全局作用域的名字在整个程序内部都可使用
+2. 定义在花括号之内的名字具有块作用域，只能在块内起作用，</p>
+<p><strong>嵌套作用域</strong>
+作用域能够彼此包含，称为<strong>内层作用域</strong>和<strong>外层作用域</strong>，在外层作用域定义的名字内层作用域可以使用，而在内层作用域定义的名字外层则不可使用，在内层作用域定义的同名局部变量会覆盖外层的变量</p>
+<p><strong>如果函数可能使用到某个全局变量，则不宜在定义一个同名的局部变量</strong></p>
+<h2 id="23-复合类型">2.3 复合类型</h2>
+<p><em><strong>基于其他类型定义的类型称为复合类型</strong></em></p>
+<h3 id="231-引用">2.3.1 引用</h3>
+<p><strong>引用(reference)</strong> 为对象起了另一个名字，写法为在类型名前加上<code>&amp;</code>符</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">refval</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+</code></pre></div><ul>
+<li><strong>要点</strong>
+1. 不存在空引用。引用必须连接到一块合法的内存。
+2. 一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。
+3. 引用必须在创建时被初始化。指针可以在任何时间被初始化。
+4. 引用不是一个对象，所以不存在引用的引用
+5. 引用的类型要和与之绑定的对象严格匹配，而且引用只能绑定在对象上。不能是字面值</li>
+</ul>
+<h3 id="232-指针">2.3.2 指针</h3>
+<ol>
+<li><strong>指针(point)</strong> 是指向另一种类型的复合类型，指针本身就是一个对象，且无需在定义时赋初值。<strong>但是未初始化的指针的值是未定义的</strong></li>
+<li>定义指针的方法为：<code>int *p;</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>指针储存的是对象的地址，可以利用取地址符<code>&amp;</code>获取对象的地址:<code>int *p = &amp;val</code></li>
+<li>利用指针访问对象：<code>int val = *p</code>,此时的<code>*</code>号称为解引用符，解引用操作只适用于那些指向了对象的指针</li>
+<li><strong>空指针(null point)</strong> 不指向任何对象：<code>int *p = nullptr</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li><strong>指针的值应属于下列四种状态之一</strong>
+1. 指向一个对象
+2. 指向紧邻对象所占空间的下一个位置
+3. 空指针，意味着指针没有指向任何对象
+4. 无效指针，上述情况之外的其他值。试图访问无效指针将引发错误</li>
+<li><strong>指针和引用的区别</strong>：指针和引用都能提供对其他对象的间接访问，引用并非一个对象，一旦定义了引用就无法使其再绑定另一个对象。但是指针是对象，而且指针的指向可以被修改</li>
+<li><strong>void* 指针</strong> :<code>void*</code>是一种特殊类型的指针，可以存放任意对象的地址，但是可用的操作比较有限，并不能直接操作<code>void*</code>指针的所指的对象，以<code>void*</code>的视角来看内存空间也仅仅是内存空间，没法访问内存空间中所存储的对象</li>
+<li>指向指针的指针：<code>int **p</code>,通过<code>*</code>的个数可以确定指针的级别</li>
+<li>指向指针的引用：指针是一个对象，所以定义指向指针的引用，反之引用不是一个对象，所以不存在指向引用的指针。<code>int *p = &amp;u=i; int &amp;ref = p;</code></li>
+</ol>
+<p><em><strong>建议初始化所有指针，如果可能，尽量在定义了对象之后再定义它的的指针</strong></em></p>
+<h2 id="24-const限定符">2.4 const限定符</h2>
+<p><em><strong>利用<code>const</code>关键字来定义一个常量。因为常量不能被修改，所以<code>const</code>对象一旦创建后其值就不能再改变，所以const对象必须初始化</strong></em></p>
+<h3 id="241-const的引用">2.4.1 const的引用</h3>
+<ol>
+<li>默认状态下const对象仅在文件内有效: 在编译的过程中，编译器会将所有的const对象替换成对应的值，为了执行上述替换，编译器必须知道const对象的初始值，那么在用到该对象的文件中必须有对它的定义，所以在C++中const对象被设定为仅在文件内有效。如果要使const对象在文件间共享，则需要在变量的定义前加<code>extern</code>关键字</li>
+<li>const的引用：对常量的引用不能被用作修改他所绑定的对象
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">const</span> <span class="kt">int</span> <span class="n">cvalue</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">rc</span> <span class="o">=</span> <span class="n">cvalue</span><span class="p">;</span>
+</code></pre></div>``</li>
+<li>默认情况下，引用的类型必须和所引用的对象保持一致，但是有两个例外，
+<ol>
+<li>第一个例外是在初始化常量引用时允许用任意表达式作为初始值，只要该表达式能够转换成引用的类型，尤其是允许为一个常量引用绑定一个非常量的对象、字面值、一般表达式</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="kt">double</span> <span class="n">dval</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
+	<span class="c1">//  此时ri引用的是一个int型的数，但是dval却是一个双精度浮点型的数，为了保证ri绑定的是一个整数，编译器进行了替换
+</span><span class="c1"></span>	<span class="k">const</span> <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+	<span class="c1">//  在这种情况下ri绑定的是一个**临时量对象**，所谓临时量对象就是编译器需要一个临时空间来暂存表达式的求值结果
+</span></code></pre></div>``
+2. 当ri不是常量时，意味着可以通过ri改变所引用对象的值，但是ri引用的是一个临时量而非dval，既然创建了引用就是想通过引用修改所指向的对象的值，但是这种状况是无法修改的，所以C++将此类行为归为非法</li>
+<li><em><strong>注意：对const的引用仅对引用可参与的操作做了限定，而对所引用的对象本身是不是一个常量未作限定，因此对象可以是非常量，可以修改对象本身的值</strong></em></li>
+</ol>
+<h3 id="242-指针和const">2.4.2 指针和const</h3>
+<ul>
+<li>与常量引用类似，也可以令指针指向常量，<strong>指向常量的指针</strong>不能用于改变其所指向的对象的值，指向常量的指针并没有规定其所指的对象必须是一个常量，只是不能通过该指针去改变所指对象的值，但是要想储存常量对象的地址，只能使用指向常量的指针</li>
+<li>指针本身也是对象，所以可以令指针本身是常量，称为<strong>常量指针(const pointer)</strong>，把<code>*</code>放在const之前用来说明指针本身是一个常量，不能修改指针中所存储的地址， 也就是不能修改指针的指向，指针本身是一个常量并不意味这不能通过指针修改其所指的对象的值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">//定义一个对象
+</span><span class="c1"></span>	<span class="k">const</span> <span class="kt">int</span> <span class="n">cval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>    <span class="c1">//定义一个常量，其值不可修改
+</span><span class="c1"></span>	<span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>   <span class="c1">//指向常量的指针，不能通过指针修改所指对象的值
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="o">*</span><span class="k">const</span> <span class="n">ptr</span><span class="err">`</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>   <span class="c1">//常量指针，不能修改指针的指向，但是可以修改所指对象的值
+</span></code></pre></div><h3 id="243-顶层const">2.4.3 顶层const</h3>
+<p><strong>顶层const</strong>表示指针本身是一个常量，即常量指针。<strong>底层const</strong>表示指针所指的对象是一个常量，const修饰的普通常量也是顶层const</p>
+<h3 id="244-constexpr和常量表达式">2.4.4 constexpr和常量表达式</h3>
+<ul>
+<li><strong>常量表达式(const expression)</strong> 是指值不会改变的并且在编译过程就会得到计算结果的表达式。字面值、用常量表达式初始化的const对象也是常量表达式</li>
+<li><strong>constexpr</strong> 变量：将变量声明为constexpr类型以便由编译器来验证变量的值是不是一个常量表达式</li>
+<li>一般来说，如果你认定变量是一个常量表达式，那就声明为constexpr类型</li>
+<li><strong>字面值类型</strong>：常量表达式的值需要在编译时就得到计算，因此对声明constexpr时用到的类型必须有所限制，因为这些类型比较简单、值也显而易见，所有就把他们称为字面值类型。算术类型、引用、指针都属于此类，类类型则不属于字面值类型</li>
+<li>注意：定义一个指针为constexpr类型，仅对指针本身有效，与指针指向的值无关</li>
+</ul>
+<h2 id="25-处理类型">2.5 处理类型</h2>
+<h3 id="251-类型别名">2.5.1 类型别名</h3>
+<p><strong>类型别名(type alias)</strong>: 用来简化复杂的类型名，两种方法创建类型别名</p>
+<ul>
+<li>使用关键字<code>typedef</code>， 使用typedef定义的不再是变量而是类型别名</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">typedef</span> <span class="kt">int</span> <span class="n">zhengshu</span><span class="p">;</span>    <span class="c1">//zhengshu是int的别名
+</span><span class="c1"></span>	<span class="k">typedef</span> <span class="kt">int</span><span class="o">*</span> <span class="n">zhizhen</span><span class="p">;</span>             <span class="c1">//zhizhen是int*的别名
+</span></code></pre></div><ul>
+<li>使用别名声明来定义类型的别名</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">using</span> <span class="n">zhegnshu</span> <span class="o">=</span> <span class="kt">int</span><span class="p">;</span>   <span class="c1">//zhengshu是int的别名
+</span><span class="c1"></span>	<span class="k">using</span> <span class="n">zhizhen</span> <span class="o">=</span> <span class="kt">int</span><span class="o">*</span><span class="p">;</span>
+</code></pre></div><ul>
+<li>易错点</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">typedef</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pstring</span><span class="p">;</span>
+	<span class="k">const</span> <span class="n">pstring</span> <span class="n">cstr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>   <span class="c1">//此时const修饰的是指向char的指针，也就是cstr是常量指针
+</span></code></pre></div><h3 id="252-auto类型说明符">2.5.2 auto类型说明符</h3>
+<ul>
+<li><strong>auto</strong>让编译器通过初始值来推算变量的类型，显然auto定义的变量必须有初始值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.15</span><span class="p">;</span>
+	<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="err">`</span><span class="n">c</span><span class="err">`</span><span class="p">;</span>
+</code></pre></div><ul>
+<li>auto会忽略顶层const,但底层const会保留</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>   <span class="c1">//i是一个顶层const
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">j</span>    <span class="c1">//p是一个底层const
+</span><span class="c1"></span>	<span class="k">auto</span> <span class="n">ai</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>       <span class="c1">//i的顶层特性会被忽略
+</span><span class="c1"></span>	<span class="k">auto</span> <span class="n">ap</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>    <span class="c1">//p的底层特性会被保留
+</span></code></pre></div><h3 id="253-decltype类型指示符">2.5.3 decltype类型指示符</h3>
+<ul>
+<li>类型说明符<strong>decltype</strong>会选择并返回操作数的数据类型，在此过程中编译器分析表达式并得到他的类型，却并不实际计算表达式的值</li>
+<li>如果decltye使用的表达式是一个变量，则decltype返回该变量的类型（包括顶层const和引用）</li>
+<li><strong>注意</strong>：decltype((variable))双层括号的结果永远是引用，而decltype(variable)结果只有当variable本身是引用是才是引用</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">decltype</span><span class="p">(</span> <span class="n">f</span><span class="p">()</span> <span class="p">)</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>     <span class="c1">//sum的类型就是f()的返回类型
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">i</span>  <span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+	<span class="k">decltype</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>    <span class="c1">//y的类型就是x的类型
+</span><span class="c1"></span>	<span class="k">decltype</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="n">di</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">//di的类型就是ci的类型，并且因为ci是常量，所以di必须初始化
+</span><span class="c1"></span>	<span class="k">decltype</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span> <span class="n">dri</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>    <span class="c1">//dri就是x的引用
+</span><span class="c1"></span>	<span class="k">decltype</span><span class="p">((</span><span class="n">x</span><span class="p">))</span> <span class="n">d</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>    <span class="c1">//双层括号表示引用，此时d是int&amp;类型
+</span></code></pre></div><h2 id="26-自定义数据结构">2.6 自定义数据结构</h2>
+<ul>
+<li><strong>数据结构</strong>：就是把一组相关的数据元素组织起来然后使用他们的策略和方法</li>
+<li>C++以类的形式自定义数据结构，类中包含属性和方法。属性就是数据元素，方法就是函数</li>
+<li>在C++中类和结构体的区别
+<ul>
+<li>类的关键字是<code>class</code>，结构体的关键字是<code>struct</code></li>
+<li>class 中默认的成员访问权限是 private 的，而 struct 中则是 public 的。</li>
+<li>从 class 继承默认是 private 继承，而从 struct 继承默认是 public 继承。</li>
+<li>class 可以定义模板，而 struct 不可以。</li>
+<li>C与C++结构体中前者不能有函数，后者可以有。</li>
+</ul>
+</li>
+<li>类的数据成员：类的数据成员定义了类的对象的具体内容，每个对象都有自己的一份数据成员拷贝，C++11标准中可以为数据成员提供一个<strong>类内初始值</strong>，以便在创建对象时初始化对象成员</li>
+</ul>
+<h3 id="261-定义一个数据结构">2.6.1 定义一个数据结构</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">struct</span> <span class="nc">type_name</span><span class="p">{</span>
+		<span class="n">member_type1</span> <span class="n">member_name1</span><span class="p">;</span>
+		<span class="n">member_type2</span> <span class="n">member_name2</span><span class="p">;</span>
+		<span class="p">.....</span>
+		<span class="n">member_function1</span><span class="p">();</span>
+		<span class="n">member_function2</span><span class="p">();</span>
+		<span class="p">......</span>
+	<span class="p">}</span><span class="n">object_name</span><span class="p">;</span>   <span class="c1">//结构体定义
+</span><span class="c1"></span>	
+	<span class="k">struct</span> <span class="nc">type_name</span> <span class="n">object_name</span><span class="p">;</span>   <span class="c1">//结构体声明
+</span><span class="c1"></span>	<span class="k">typedef</span> <span class="k">struct</span> <span class="nc">type_name</span> <span class="n">object_name2</span><span class="p">;</span>    <span class="c1">//C98及以前
+</span></code></pre></div><ul>
+<li>注意事项1：<code>type_name</code> 是结构体类型的名称，<code>member_type1 member_name1</code> 是标准的变量定义，比如 <code>int i;</code> 或者 <code>float f;</code>或者其他有效的变量定义。在结构定义的末尾，最后一个分号之前，您可以指定一个或多个结构变量，这是可选的。</li>
+<li>注意事项2：在C中定义结构体变量需要使用<code>typedef</code>（C98以前），C++中不需要</li>
+<li>注意事项2：C++在声明一个结构体变量时使用<code>typedef</code>带来的影响
+<ul>
+<li>第一是不用 typedef：object_names 就相当于一个变量了，可以直接调用结构体中的内容</li>
+<li>第二种是用 typedef：object_names 部分是个结构体类型，在调用结构体之前必须创建结构体的变量</li>
+</ul>
+</li>
+<li>注意事项3：类右侧表示结束的花括号后必须写一个分号，因为类体后面可以紧跟变量名，以示对该类型变量的定义</li>
+</ul>
+<h3 id="262-使用一个数据结构">2.6.2 使用一个数据结构</h3>
+<ul>
+<li>
+<p>通过成员访问运算符<code>.</code>来访问结构的成员</p>
+</li>
+<li>
+<p><code>.</code>和<code>-&gt;</code>的不同：用结构体定义了一个实体，那么这个实体要访问他里面的成员，就用点操作符，如果用结构体定义的是一个结构指针，那么要访问他里面的成员就用箭头运算符。</p>
+<h3 id="263-使用头文件">2.6.3 使用头文件</h3>
+<p>C++程序都是分离式编译，所有的预处理文件、常量、函数声明、类定义都放在头文件中</p>
+<ul>
+<li>确保头文件多次包含仍能安全工作的常用技术是<strong>预处理器(preprocessor)</strong>，预处理器是在编译之前执行的一段程序，以<code>#</code>开头</li>
+<li>使用头文件保护符来防止重复包含的发生</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="cp">#ifdef HEADNAME_H
+</span><span class="cp"></span>	<span class="cp">#define HEADNAME_H
+</span><span class="cp"></span>	<span class="p">......</span>
+	<span class="cp">#endif
+</span></code></pre></div><ul>
+<li>如果<code>#ifdef</code>为真，就执行接下来的语句直到<code>#endif</code>为止，否则就跳过</li>
+<li><strong>无论头文件有没有被使用，头文件保护符都必须要有，且养成习惯</strong></li>
+</ul>
+<p><strong>关键概念</strong></p>
+<ol>
+<li>静态类型</li>
+</ol>
+<p>C++是一种<strong>静态类型(statically typed)<strong>语言，其含义是在编译阶段检查类型。其中检查类型的过程称为</strong>类型检查(type checking)</strong>.在使用变量前声明类型有助于编译器发现问题</p>
+<ol start="2">
+<li>在对象第一次被使用的地方附近定义它是一种好的选择</li>
+</ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><code>int *p</code> 强调变量具有复合类型;<code>int* p</code>这样写强调定义了一种复合类型&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><code>nullptr</code> 是一种特殊类型的字面值，他可以被转化为任意其他的指针类型，而<code>NULL</code>是一种预处理变量，在头文件<code>cstdlib</code>中定义，它的值就是0，在C++中最好使用nullptr,<strong>尽量避免使用NULL</strong>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://catfishcoder.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        奋斗途中，不轻言放弃
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://catfishcoder.github.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://catfishcoder.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://catfishcoder.github.io/js/fancybox.min.js"></script>
+<script src="https://catfishcoder.github.io/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>
