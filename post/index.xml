@@ -13,7 +13,7 @@
       <pubDate>Sun, 02 Jan 2022 16:45:37 +0800</pubDate>
       
       <guid>https://catfishcoder.github.io/post/cpp_day3/</guid>
-      <description>除了内置类型外，C++还提供了丰富的抽象数据类型库，包括string、vector等等 3.1 命名空间中的using声明 3.2 标准库类型string 3.3 标准库类型vector</description>
+      <description>除了内置类型外，C++还提供了丰富的抽象数据类型库，包括string、vector等等 3.1 命名空间中的using声明 命名空间：表示一个标识符的可见范围，用来区分不同库中相同的函数、类和变量。使用关键字n</description>
     </item>
     
     <item>

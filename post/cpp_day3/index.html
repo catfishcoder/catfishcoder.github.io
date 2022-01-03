@@ -12,7 +12,7 @@
 	
     
     
-    <meta name="description" content="除了内置类型外，C&#43;&#43;还提供了丰富的抽象数据类型库，包括string、vector等等 3.1 命名空间中的using声明 3.2 标准库类型string 3.3 标准库类型vector" />
+    <meta name="description" content="除了内置类型外，C&#43;&#43;还提供了丰富的抽象数据类型库，包括string、vector等等 3.1 命名空间中的using声明 命名空间：表示一个标识符的可见范围，用来区分不同库中相同的函数、类和变量。使用关键字n" />
     
 
     
@@ -93,8 +93,283 @@
                     </div>
                     <div class="post_content markdown"><p>除了内置类型外，C++还提供了丰富的抽象数据类型库，包括string、vector等等</p>
 <h2 id="31-命名空间中的using声明">3.1 命名空间中的using声明</h2>
+<ul>
+<li><strong>命名空间</strong>：表示一个标识符的可见范围，用来区分不同库中相同的函数、类和变量。使用关键字<code>namespace</code>定义命名空间</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">namespace</span> <span class="n">namespace_name</span><span class="p">{</span>
+		<span class="n">namespace_body</span><span class="p">;</span>
+		<span class="p">....</span>
+	<span class="p">}</span>	<span class="c1">//定义一个命名空间
+</span><span class="c1"></span>	<span class="n">namespace_name</span><span class="o">::</span><span class="n">namespace_body</span>	<span class="c1">//使用命名空间中的成员
+</span></code></pre></div><ul>
+<li><strong>using指令</strong>:使用<code>using namespace namespace_name</code>告诉编译器后续的代码将使用指定命名空间中的名称</li>
+<li>位于头文件中的代码一般来说不应该使用using声明，因为头文件中的内容会拷贝到所有引用它的文件中去，如果头文件中有using声明，那么每个使用到该头文件的文件都会有这个声明，会导致一些错误</li>
+</ul>
 <h2 id="32-标准库类型string">3.2 标准库类型string</h2>
-<h2 id="33-标准库类型vector">3.3 标准库类型vector</h2>
+<ul>
+<li>标准库类型<strong>string</strong>表示可变长的字符序列，使用string类型必须包含string头文件：<code>#include&lt;string&gt;</code></li>
+<li><code>std::string</code>是在标准库<code>&lt;string&gt;</code>中提供的一个<strong>类</strong>，本质上是 std::basic_string<char> 的别称。</li>
+</ul>
+<h3 id="321-定义和初始化一个string对象">3.2.1 定义和初始化一个string对象</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">string</span> <span class="n">s1</span><span class="p">;</span>	<span class="c1">//默认初始化，s1是一个空字符串
+</span><span class="c1"></span>	<span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">;</span>		<span class="c1">//s2是s1的副本
+</span><span class="c1"></span>	<span class="n">string</span> <span class="nf">s2</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span> 		<span class="c1">//直接初始化
+</span><span class="c1"></span>	<span class="n">string</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&#34;value&#34;</span><span class="p">;</span> 	<span class="c1">//s3是字面值“value”的副本，除了字面值最后的那个空字符外
+</span><span class="c1"></span>	<span class="n">string</span> <span class="nf">s3</span><span class="p">(</span><span class="s">&#34;value&#34;</span><span class="p">);</span>		<span class="c1">//同上
+</span><span class="c1"></span>	<span class="n">string</span> <span class="nf">s4</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">);</span>		<span class="c1">//把s4初始化为n个c组成的串
+</span></code></pre></div><p><strong>直接初始化与拷贝初始化</strong>
+如果使用等号初始化一个变量，实际上执行的是拷贝初始化(copy initialization)，编译器把等号右侧的初始值拷贝到新创建的对象中去，与之相反，如果不使用等号，则执行的是直接初始化(direct initialization)
+直接初始化就是直接调用类的构造函数来初始化对象，例如在string s3(“value”)中，string类的string(const char *)构造函数会被调用，s3被直接初始化。然而根据标准，复制初始化应该是先调用对应的构造函数创建一个临时对象，再调用拷贝构造函数将临时对象拷贝给要创建的对象。例如在string s3=”value”中，string类的string(const char *)构造函数会被首先调用，创建一个临时对象，然后拷贝构造函数将这个临时对象复制到a。</p>
+<h3 id="322-string对象上的操作">3.2.2 string对象上的操作</h3>
+<blockquote>
+<p>类既可以定义通过函数名调用的操作，也可以定义各种运算符在该类对象上的新含义</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>os&lt;&lt;s</code></td>
+<td>将s写入到输出流os中，返回os</td>
+</tr>
+<tr>
+<td><code>is&gt;&gt;s</code></td>
+<td>从is读取字符串赋给s,字符串以空白间隔，返回is</td>
+</tr>
+<tr>
+<td><code>getline(is,s)</code></td>
+<td>从is中读取一行赋给s</td>
+</tr>
+<tr>
+<td><code>s.empty()</code></td>
+<td>s为空返回true,否则返回否则返回false</td>
+</tr>
+<tr>
+<td><code>s.size()</code></td>
+<td>返回s中字符的个数</td>
+</tr>
+<tr>
+<td><code>s[n]</code></td>
+<td>返回s中第n个字符的引用，n从0计</td>
+</tr>
+<tr>
+<td><code>s1+s2</code></td>
+<td>返回s1和s2连接之后的结果</td>
+</tr>
+<tr>
+<td><code>s1=s2</code></td>
+<td>用s2的副本代替s1原来的字符</td>
+</tr>
+<tr>
+<td><code>s1==s2</code></td>
+<td>判断s1和s2是否相等，对大小写敏感</td>
+</tr>
+<tr>
+<td><code>&lt;,&lt;=,&gt;,&gt;=</code></td>
+<td>利用字符在字典中的顺序进行比较</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>读写string对象</strong>
+从标准输入读取内容到字符串中:<code>std::cin &gt;&gt; str;</code>。注意string对象会自动忽略开头的空白，从第一个真正的字符开始，直到遇到下一个空白</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+		<span class="n">string</span> <span class="n">word</span><span class="p">;</span>
+		<span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+		<span class="k">while</span><span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 	<span class="c1">//读取未知数量的string对象
+</span><span class="c1"></span>		<span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">line</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 	<span class="c1">//使用getline读取一整行
+</span><span class="c1"></span>		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+</code></pre></div><p><strong>string的empty和size操作</strong></p>
+<ul>
+<li>empty函数根据对象是否为空返回一个对应的布尔值<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>size函数返回string对象的长度，返回值类型为<code>string::size_type</code>，这是一个无符号整型数，可以通过<code>auto</code>、<code>decltype</code>来推断变量的类型。切记不要把string::size_type类型的值和其他算术类型进行比较</li>
+</ul>
+<p><strong>string对象的比较</strong>：使用相等性运算符<code>==和!=</code>对两个string对象进行比较,相等为真，逐个字符比较且对大小写敏感</p>
+<p><strong>字面值和string对象相加</strong>：当把string对象和字符串字面值相加时，必须保证每个假发运算符的两侧至少有一个是string对象</p>
+<p>字符串字面值和并不是标准库类型string的对象</p>
+<p><strong>处理string对象中的字符</strong>
+使用<code>&lt;cctype&gt;</code>头文件中的函数来处理字符</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isalnum(c)</code></td>
+<td>当c是字母或数字时为真</td>
+</tr>
+<tr>
+<td><code>isalpha(c)</code></td>
+<td>当c是字母时为真</td>
+</tr>
+<tr>
+<td><code>iscntrl(c)</code></td>
+<td>当c是控制字符时为真</td>
+</tr>
+<tr>
+<td><code>isdigit(c)</code></td>
+<td>当c是数字时为真</td>
+</tr>
+<tr>
+<td><code>isgraph(c)</code></td>
+<td>当c不是空格但可打印时为真</td>
+</tr>
+<tr>
+<td><code>islower(c)</code></td>
+<td>当c是小写字母时为真</td>
+</tr>
+<tr>
+<td><code>isprint(c)</code></td>
+<td>当c是可打印字符是为真</td>
+</tr>
+<tr>
+<td><code>ispunct(c)</code></td>
+<td>当c是标点符号时为真</td>
+</tr>
+<tr>
+<td><code>isspace(c)</code></td>
+<td>当c是空格时为真</td>
+</tr>
+<tr>
+<td><code>isupper(c)</code></td>
+<td>当c是大写字母是为真</td>
+</tr>
+<tr>
+<td><code>isxdigit(c)</code></td>
+<td>当c是十六进制数字时为真</td>
+</tr>
+<tr>
+<td><code>tolower(c)</code></td>
+<td>如果c是大写字母，输出对应的小写字母，否则原样输出</td>
+</tr>
+<tr>
+<td><code>toupper(c)</code></td>
+<td>如果c是小写字母，输出对应的大写字母，否则原样输出</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用基于范围的for语句处理每一个字符(C++11)</strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+范围for语句，这种语句便利给定序列中的每一个元素并对序列中的每一个值执行某种操作，语法形式为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">for</span><span class="p">(</span><span class="nl">declaration</span><span class="p">:</span><span class="n">expression</span><span class="p">)</span>
+		<span class="n">statement</span><span class="p">;</span>
+</code></pre></div><p><code>expression</code>是一个对象，用于表示一个序列，<code>declaration</code>负责定义一个变量，该变量用于访问序列中的基础元素，每次迭代，declatation部分的变量会被初始化为expression部分的下一个元素值</p>
+<p><strong>使用下标或称索引访问string对象中的元素</strong>：<code>str[n]</code>，下标从0计</p>
+<h2 id="33-标准库类型vector容器container">3.3 标准库类型vector(容器container)</h2>
+<ul>
+<li>标准库类型<code>vector</code>表示对象的集合，其中所有对象的类型都相同。集合中的每个对象都有一个与之对应的索引，通过索引访问对象，要想使用vector必须包含头文件<code>&lt;vector&gt;</code></li>
+<li>vector是一个模板<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>而非类型，由vector生成的类型必须包含vector中元素的类型，比如<code>vector&lt;int&gt;</code></li>
+<li>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</li>
+</ul>
+<h3 id="331-定义和初始化vector对象">3.3.1 定义和初始化vector对象</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector&lt;T&gt; v1</code></td>
+<td>v1是一个空vector,它潜在的元素类型为T，执行的是默认初始化</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v2(v1)</code></td>
+<td>v2中包含v1所有元素的副本</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v2 = v1</code></td>
+<td>与上面相同</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v3(n,val)</code></td>
+<td>v3包含n个重复的元素，每个元素的值都是val</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v4 = {a,b,c,d,...}</code></td>
+<td>v4包含初始值个数的元素，每个元素都被赋予相应的初始值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>列表初始化</strong>：<code>vector&lt;T&gt; v5 = {a,b,c,d,...}</code></p>
+<p><strong>值初始化</strong>：通常情况下，可以只提供vector对象容纳的元素数量而忽略初始值，此时会创建一个值初始化的元素初值并赋给容器中的所有元素，这个初值由vector对象中元素的类型决定。例如：<code>vector&lt;int&gt; ivec(10)</code>,表示创建10个元素，每个初始化为0，</p>
+<ul>
+<li>注意：某些类明确要求需要初始值，就不能使用值初始化。</li>
+<li>注意：如果要指定元素数量而不是设定初始值，那么必须采用直接初始化的形式来指定向量大小</li>
+</ul>
+<p><strong>如何确定是列表初始化还是元素数量？</strong>
+在某些情况下，初始化的真实含义取决于传递初始值时用的是花括号还是圆括号，</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> 		<span class="c1">//v1有10个元素，每个的值都是0
+</span><span class="c1"></span>	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span> 		<span class="c1">//v2有1个元素，值为10
+</span><span class="c1"></span>	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v3</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> 		<span class="c1">//v3有10个元素，每个的值都为1
+</span><span class="c1"></span>	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v4</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> 		<span class="c1">//v4有2个元素，分别为10,1
+</span></code></pre></div><h3 id="332-vector的操作">3.3.2 vector的操作</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>v.push_back(t)</code></td>
+<td>向v的尾端添加一个值为t的元素</td>
+</tr>
+<tr>
+<td><code>v.empty()</code></td>
+<td>判空</td>
+</tr>
+<tr>
+<td><code>v.size()</code></td>
+<td>返回v中的元素个数</td>
+</tr>
+<tr>
+<td><code>v[n]</code></td>
+<td>返回v中第n个元素的引用</td>
+</tr>
+<tr>
+<td><code>v1 = v2</code></td>
+<td>用v2中的元素拷贝替换v1中的元素</td>
+</tr>
+<tr>
+<td><code>v1 = {a, b, c, d, ...}</code></td>
+<td>用列表中的元素拷贝替换v1中的元素</td>
+</tr>
+<tr>
+<td><code>v1 == v2</code></td>
+<td>v1和v2元素数量且对应位置的元素值都相等时二者相等</td>
+</tr>
+<tr>
+<td><code>&lt;, &lt;=, &gt;, &gt;=</code></td>
+<td>以字典顺序进行比较</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不能用下标形式添加元素</strong></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>问题：如何做到只输出非空行&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>问题：使用范围for语句统计标点符号的个数、将有的小写字母转换成大写形式&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>模板本身不是一个类或者函数，相反可以将模板看成编译器生成类或函数编写的一份说明，编译器根据模板创建类或函数的过程称为<strong>实例化</strong>，当使用模板时，需要指出编译器应把类或函数实例化成何种类型&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 </div>
                     <div class="post_footer">
                         
