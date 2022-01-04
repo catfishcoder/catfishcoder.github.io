@@ -261,9 +261,10 @@
 范围for语句，这种语句便利给定序列中的每一个元素并对序列中的每一个值执行某种操作，语法形式为：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">for</span><span class="p">(</span><span class="nl">declaration</span><span class="p">:</span><span class="n">expression</span><span class="p">)</span>
 		<span class="n">statement</span><span class="p">;</span>
-</code></pre></div><p><code>expression</code>是一个对象，用于表示一个序列，<code>declaration</code>负责定义一个变量，该变量用于访问序列中的基础元素，每次迭代，declatation部分的变量会被初始化为expression部分的下一个元素值</p>
+</code></pre></div><p><code>expression</code>是一个对象，用于表示一个序列，<code>declaration</code>负责定义一个变量，该变量用于访问序列中的基础元素，每次迭代，declatation部分的变量会被初始化为expression部分的下一个元素值
+<em><strong>注意：范围for语句体内不应改变其所遍历序列的大小</strong></em></p>
 <p><strong>使用下标或称索引访问string对象中的元素</strong>：<code>str[n]</code>，下标从0计</p>
-<h2 id="33-标准库类型vector容器container">3.3 标准库类型vector(容器container)</h2>
+<h2 id="33-标准库类型vector一种容器container">3.3 标准库类型vector(一种容器container)</h2>
 <ul>
 <li>标准库类型<code>vector</code>表示对象的集合，其中所有对象的类型都相同。集合中的每个对象都有一个与之对应的索引，通过索引访问对象，要想使用vector必须包含头文件<code>&lt;vector&gt;</code></li>
 <li>vector是一个模板<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>而非类型，由vector生成的类型必须包含vector中元素的类型，比如<code>vector&lt;int&gt;</code></li>
@@ -356,6 +357,16 @@
 </tbody>
 </table>
 <p><strong>不能用下标形式添加元素</strong></p>
+<h2 id="34-vector和数组的区别">3.4 vector和数组的区别</h2>
+<p>
+
+<div class="fancybox">
+<a data-fancybox="gallery" href="https://pan-yz.chaoxing.com/thumbnail/0,0,0/3f6f7d4eb330380ecc79e77acbca9172">
+<img src="https://pan-yz.chaoxing.com/thumbnail/0,0,0/3f6f7d4eb330380ecc79e77acbca9172" alt="vector和数组"  />
+</a>
+</div>
+
+</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="zyanjun" />
+	
+	
+	
+	<title>Cpp_day4 ｜ zyanjun</title>
+	
+    
+    
+    <meta name="description" content="3.4 迭代器 除了下标之外，访问容器成员的另一种方法 除了vector之外，标准库还定义了其他几种容器，所有的容器都可以使用迭代器，但只有少数几种同时支持下标运算符。 严格来说string不属于容器，但是其支持" />
+    
+
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://catfishcoder.github.io/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/highlight.css" />
+
+    
+    
+    <link rel="stylesheet" href="https://catfishcoder.github.io/css/css/zozo.css" />
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://catfishcoder.github.io/">
+                    <span>zyanjun</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">学无止境</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/catfishcoder/catfishcoder.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://catfishcoder.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/post/cpp_day4/'>Cpp_day4</a></h2>
+                        <span class="date">2022.01.04</span>
+                    </div>
+                    <div class="post_content markdown"><h2 id="34-迭代器">3.4 迭代器</h2>
+<ul>
+<li>除了下标之外，访问容器成员的另一种方法</li>
+<li>除了vector之外，标准库还定义了其他几种容器，<strong>所有的容器都可以使用迭代器</strong>，但只有少数几种同时支持下标运算符。</li>
+<li>严格来说string不属于容器，但是其支持与容器类似的操作，包括迭代器。</li>
+</ul>
+<h3 id="341-使用迭代器">3.4.1 使用迭代器</h3>
+<ul>
+<li>有迭代器的类型，都有返回迭代器的成员。比如<strong>begin</strong>和<strong>end</strong>成员，begin成员返回指向第一个元素的迭代器，end成员返回指向容器尾元素的下一个位置的迭代器</li>
+<li>尾元素的下一个位置并无实际含义，只是一个标记。表示已经处理完容器中的所有元素，end成员返回的迭代器称为<strong>尾后迭代器</strong>，如果容器为空则bengin和end返回的是同一个迭代器</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">auto</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>	<span class="c1">//iter1的类型为vector&lt;int&gt;::iterator
+</span><span class="c1"></span>	<span class="k">auto</span> <span class="n">iter2</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>		<span class="c1">//同上
+</span><span class="c1"></span>
+	<span class="k">auto</span> <span class="n">iter3</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>	<span class="c1">//iter3的类型为vector&lt;int&gt;::const_iterator
+</span><span class="c1"></span>	<span class="k">auto</span> <span class="n">iter4</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">cend</span><span class="p">();</span>		<span class="c1">//同上
+</span></code></pre></div><p><strong>迭代器的操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*iter</code></td>
+<td>返回迭代器iter所指元素的引用</td>
+</tr>
+<tr>
+<td><code>iter-&gt;mem</code></td>
+<td>解引用iter并获取该元素名为mem的元素，等价于(*iter).mem</td>
+</tr>
+<tr>
+<td><code>++iter</code></td>
+<td>令iter指向容器的下一个元素</td>
+</tr>
+<tr>
+<td><code>--iter</code></td>
+<td>指向容器上一个元素</td>
+</tr>
+<tr>
+<td><code>iter1 == iter2</code></td>
+<td>判断两个迭代器是否相等</td>
+</tr>
+</tbody>
+</table>
+<p><strong>迭代器的类型</strong>
+事实上就像string和vector的size_type一样，我们并不知道迭代器精确的返回值类型，其实也无需知道那些拥有迭代器的标准库类型使用的是<code>iterator</code>和<code>const_iterator</code>来表示迭代器的类型</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span>	<span class="c1">//it能读写vector&lt;int&gt;中的元素
+</span><span class="c1"></span>	<span class="n">string</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it2</span>		<span class="c1">//it2能读写string对象中的字符
+</span><span class="c1"></span>
+	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">cit</span>		<span class="c1">//cit只能读元素，不能写元素
+</span><span class="c1"></span>	<span class="n">string</span><span class="o">::</span><span class="n">iterator</span> <span class="n">cit2</span> 				<span class="c1">//cit2只能读字符，不能写字符
+</span></code></pre></div><p><strong>迭代器和迭代器类型</strong>
+迭代器这个名词有三个不同的含义：可能是迭代器概念本身，也可能指容器定义的迭代器类型，还可能指某个迭代器对象</p>
+<p><strong>结合解引用和成员访问操作</strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<ul>
+<li>解引用迭代器可以获得迭代器所指的对象，如果该对象的类型恰好是类，就可以进一步访问他的成员：<code>(*iter).mem</code></li>
+<li>为了简化操作，C++定义了<strong>箭头运算符(-&gt;)</strong>。箭头运算符把解引用和成员访问运算符结合起来，也就是说<code>iter-&gt;mem</code>=<code>(*iter).mem</code></li>
+<li>不能解引用尾后迭代器</li>
+</ul>
+<h3 id="342-迭代器运算">3.4.2 迭代器运算</h3>
+<p>除了递增运算符和比较运算符外，string和vector提供了额外的运算符，所有的这些运算符称为<strong>迭代器运算</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>iter + n</code></td>
+<td>使迭代器向前移动n个元素，迭代器要么指向新的位置，要么指向尾后迭代器</td>
+</tr>
+<tr>
+<td><code>iter + n</code></td>
+<td>向后移动n个元素，迭代器要么指向新的位置，要么指向尾后迭代器</td>
+</tr>
+<tr>
+<td><code>iter += n</code></td>
+<td>迭代器的复合运算，将iter+n的结果赋给iter</td>
+</tr>
+<tr>
+<td><code>iter -= n</code></td>
+<td>同上</td>
+</tr>
+<tr>
+<td><code>iter1 - iter2</code></td>
+<td>两个迭代器相减表示他们之间的距离，前提是这两个迭代器指向同一个容器</td>
+</tr>
+<tr>
+<td><code>&gt;, &gt;=, &lt;, &lt;=</code></td>
+<td>两个迭代器的位置比较，前提是这两个迭代器指向同一个容器</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>两个迭代器使用关系运算符进行比较，所得结果是两个迭代器之间的距离，返回值类型是名为<strong>difference_type</strong>的带符号整型数,</li>
+<li>一些计算的例子
+<ul>
+<li>计算v1中间的元素：<code>auto mid = v1.begin() + v1.size()/2</code></li>
+<li>只处理v1前半部分：<code>if(it &lt; mid)</code></li>
+<li>使用迭代器完成二分查找</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="c1">//v1必须是有序的
+</span><span class="c1"></span>	<span class="k">auto</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">;</span>
+	<span class="k">auto</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">mid</span> <span class="o">!=</span> <span class="n">end</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">mid</span> <span class="o">!=</span> <span class="n">source</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">mid</span> <span class="o">&gt;</span> <span class="n">source</span><span class="p">)</span>
+			<span class="n">end</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+		<span class="k">else</span>
+			<span class="n">begin</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="n">mid</span> <span class="o">=</span> <span class="n">begin</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+	<span class="p">}</span>
+</code></pre></div><p><strong>迭代器是什么？</strong></p>
+<ol>
+<li>迭代器是一种概念：一种访问容器中元素的方法</li>
+<li>迭代器是一种方法：每个容器都定义了迭代器这种方法（此方法非彼方法，这里更像是成员函数）</li>
+<li>迭代器是一种类型，迭代器的返回值是形如<code>vector&lt;int&gt;::iterator</code>的类型</li>
+</ol>
+<h2 id="注意事项">注意事项</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><em><strong>注意：但凡是使用了迭代器的循环体，都不要向迭代器所属的容器中添加元素</strong></em>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://catfishcoder.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        奋斗途中，不轻言放弃
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://catfishcoder.github.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://catfishcoder.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://catfishcoder.github.io/js/fancybox.min.js"></script>
+<script src="https://catfishcoder.github.io/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

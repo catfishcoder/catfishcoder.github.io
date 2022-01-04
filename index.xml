@@ -6,7 +6,16 @@
     <description>Recent content on zyanjun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jan 2022 16:45:37 +0800</lastBuildDate><atom:link href="https://catfishcoder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 16:03:50 +0800</lastBuildDate><atom:link href="https://catfishcoder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cpp_day4</title>
+      <link>https://catfishcoder.github.io/post/cpp_day4/</link>
+      <pubDate>Tue, 04 Jan 2022 16:03:50 +0800</pubDate>
+      
+      <guid>https://catfishcoder.github.io/post/cpp_day4/</guid>
+      <description>3.4 迭代器 除了下标之外，访问容器成员的另一种方法 除了vector之外，标准库还定义了其他几种容器，所有的容器都可以使用迭代器，但只有少数几种同时支持下标运算符。 严格来说string不属于容器，但是其支持</description>
+    </item>
+    
     <item>
       <title>Cpp_day3</title>
       <link>https://catfishcoder.github.io/post/cpp_day3/</link>
