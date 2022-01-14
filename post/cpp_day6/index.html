@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="zyanjun" />
+	
+	
+	
+	<title>Cpp_day6 ｜ zyanjun</title>
+	
+    
+    
+    <meta name="description" content="4 表达式 表达式由一个或多个运算对象(operand)组成，对表达式求值将得到一个结果(result),字面值和变量是最简单的表达式(expression),其结果就是字面值和表达式的值，将**运算符(" />
+    
+
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://catfishcoder.github.io/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://catfishcoder.github.io/css/highlight.css" />
+
+    
+    
+    <link rel="stylesheet" href="https://catfishcoder.github.io/css/css/zozo.css" />
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/post/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="https://catfishcoder.github.io/">
+                    <span>zyanjun</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">学无止境</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/catfishcoder/catfishcoder.github.io" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                <a href="https://catfishcoder.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/post/cpp_day6/'>Cpp_day6</a></h2>
+                        <span class="date">2022.01.08</span>
+                    </div>
+                    <div class="post_content markdown"><h1 id="4-表达式">4 表达式</h1>
+<blockquote>
+<p>表达式由一个或多个<strong>运算对象(operand)<strong>组成，对表达式求值将得到一个</strong>结果(result)</strong>,字面值和变量是最简单的<strong>表达式(expression)</strong>,其结果就是字面值和表达式的值，将**运算符(operator)**和一个或多个运算对象组合起来可以生成较复杂的表达式</p>
+</blockquote>
+<h2 id="41-基础">4.1 基础</h2>
+<ul>
+<li>作用于一个运算对象的运算符是一元运算符，作用于两个运算对象的运算符是二元运算符</li>
+<li>不同类型的类型的对象也可以进行运算，只要他们能被转换成同一类型即可，小整数类型(bool,char,short)通常被提升为较大的整数类型，比如int</li>
+<li>C++本身定义了运算读用于内置类型，但在类类型中，用户可以自定义运算符的含义，称为<strong>重载运算符</strong></li>
+<li><strong>左值和右值</strong>：当一个对象被用于右值的时候，用的是对象的值（内容），当一个对象被用于左值的时候，用的是对象身份（在内存中的位置）</li>
+<li><strong>优先级和结合律</strong>：优先级高的运算符先运算，优先级相同的运算符满足左结合律，也就是从左到右的顺序运算,有括号的先计算括号内的</li>
+</ul>
+<h2 id="42-算术运算符">4.2 算术运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>一元正号</td>
+<td><code>+ expr</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>一元负号</td>
+<td><code>- expr</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>乘法</td>
+<td><code>expr * expr</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>除法</td>
+<td><code>expr / expr</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>求余数</td>
+<td><code>expr % expr</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>加法</td>
+<td><code>expr + expr</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减法</td>
+<td><code>expr - expr</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>运算符表都将按照优先级的形式进行分组，优先级从高到低</li>
+<li>当一元正（负）号运算符作用于指针或者算术值时，返回运算对象的一个（提升后的）副本，</li>
+<li>算术运算符能作用于任意算术类型，或者能转换成算术类型的类型，不能作用于布尔值</li>
+<li>在进行算术运算时，注意不要使运算对象超过其所允许的最大值</li>
+<li>取余/取模运算的两个运算对象必须是整数类型</li>
+</ul>
+<h2 id="43-逻辑和关系运算符">4.3 逻辑和关系运算符</h2>
+<table>
+<thead>
+<tr>
+<th>结合律</th>
+<th>运算符</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>右</td>
+<td><code>!</code></td>
+<td>逻辑非</td>
+<td><code>!expr</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>&lt;</code></td>
+<td>小于</td>
+<td><code>expr &lt; expr</code></td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+<td><code>expr &lt;= expr</code></td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>&gt;</code></td>
+<td>大于</td>
+<td><code>expr &gt; expr</code></td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+<td><code>expr &gt;= expr</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>==</code></td>
+<td>等于</td>
+<td><code>expr == expr</code></td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>!=</code></td>
+<td>不等于</td>
+<td><code>expr !== expr</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>&amp;&amp;</code></td>
+<td>逻辑与</td>
+<td><code>expr &amp;&amp; expr</code></td>
+</tr>
+<tr>
+<td>左</td>
+<td>`</td>
+<td></td>
+<td>`</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>对逻辑与运算符(&amp;&amp;)来说,当两个对象都为真时结果为真. 当且仅当左侧运算符为真时才对右侧运算符求值</li>
+<li>对逻辑或(||)运算符来说,有一个为真结果就为真. 当且仅当左侧运算符为假时才对右侧运算符求值</li>
+<li>逻辑非运算符将运算结果取反后返回</li>
+<li>关系运算符,满足左结合律,返回的是布尔值. 进行比较运算时,除非比较的对象是布尔值,否则不要使用布尔值字面量<code>true</code>和<code>false</code>作为运算对象</li>
+</ul>
+<h2 id="44-赋值运算符">4.4 赋值运算符</h2>
+<ul>
+<li>赋值运算符的左侧运算对象必须是一个可修改的左值</li>
+<li>如果左右两个运算对象的类型不同,右侧的运算对象将转换成左侧运算对象的类型</li>
+<li>赋值运算满足右结合律</li>
+<li>赋值运算符优先级较低</li>
+</ul>
+<h2 id="45-递增和递减运算符">4.5 递增和递减运算符</h2>
+<ul>
+<li>递增运算符(++)和递减运算符(&ndash;)为对象加一和减一,特别指出递增和递减可以用于迭代器</li>
+<li>递增和递减有两种类型,前置和后置,
+<ul>
+<li>前置版本:首先将运算对象加一,然后将改变后的对象作为求值结果</li>
+<li>后置版本:求值结果是运算对象改变前的副本,然后运算对象加一</li>
+<li>验证代码:<code>cout &lt;&lt; ++i;</code>和<code>cout &lt;&lt; i++;</code>
+<strong>除非必须,否则不使用递增递减的后置版本</strong></li>
+<li>前置版本的递增运算符避免了不必要的工作,他把值加一后直接返回了改变后的运算对象,而后置版本需要先将原始值存储下来以便返回这个未修改的内容</li>
+</ul>
+</li>
+</ul>
+<p><strong>在一条语句中混用解引用符和递增运算符</strong></p>
+<ul>
+<li><code>*pedg++</code>根据优先级看:<code>*(pedg++)</code>,过程为:先把pedg的值加一,然后返回pedg的初始值的副本作为其求值结果,此时解引用的操作对象为pedg未增加之前的值</li>
+<li>所以这条语句的实际结果为:输出pedg的值然后将pedg向后移动一个位置<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+<h2 id="46-成员访问运算符">4.6 成员访问运算符</h2>
+<ul>
+<li>
+<p>成员访问运算符(.):点运算符获取类对象, 结构体, 联合的一个成员,如果成员所属的对象是左值,则结果是左值,如果成员所属的对象是右值,则结果是右值</p>
+</li>
+<li>
+<p>成员访问运算符(-&gt;):箭头运算符作用一个指针类型的运算对象,相当于<code>(*ptr).mem</code>, 结果是一个左值</p>
+</li>
+<li></li>
+<li>
+<p>条件运算符<code>(cond ? expr1 : expr2)</code>是唯一的三元运算符,如果cond为真则执行expr1,否则执行expr2</p>
+</li>
+<li>
+<p>可以嵌套条件运算符,也可以在输出表达式中使用田间运算符</p>
+</li>
+</ul>
+<h2 id="48-位运算符">4.8 位运算符</h2>
+<blockquote>
+<p>位运算符作用于整数类型的运算对象, 并把运算对象看作是二进制位的集合, 位运算符提供检查和设kjmiiuok置二进制位的功能<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+一般来说,如果运算对象是小整型则他的值会被自动提升为较大的整数类型,提升过程原来的位保持不变,向高位添加0即可</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code></td>
+<td>位求反</td>
+<td><code>~ expr</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>左移</td>
+<td><code>expr1 = expr1 &lt;&lt; expr2</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>右移</td>
+<td><code>expr1 = expr1 &gt;&gt; expr2</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>位与</td>
+<td><code>expr1 &amp; expr2</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>位异或</td>
+<td><code>expr1 ^ expr2</code></td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>`</td>
+<td>`</td>
+<td>位或</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>移位运算符</strong></p>
+<ul>
+<li><code>&lt;&lt;</code>和<code>&gt;&gt;</code>这两种运算符的内置含义是对其运算对象进行基于二进制位的移动操作</li>
+<li>首先让左侧的运算对象按照右侧运算对象的要求移动指定位数,然后将经过移动的左侧运算对象的拷贝作为求值结果</li>
+<li>右侧的运算对象一定不能为负,</li>
+<li>二进制的左移或者右移,移出边界之外的位就被舍弃掉了</li>
+<li>左移运算符在右侧插入值为0的二进制位,如果右移运算符的运算对象是无符号类型,则在左侧插入0,如果是有符号类型,则视情况而定</li>
+</ul>
+<p><strong>位求反运算符</strong></p>
+<ul>
+<li>位求反运算符(~)将运算对象逐位求反后生成一个新值,将1置为0,将0置为1</li>
+</ul>
+<p><strong>位与,位或,位异或运算符</strong></p>
+<ul>
+<li>对于位与(&amp;)运算符来说,如果两个运算对象的对应位置都是1,则结果为1,否则为0</li>
+<li>对于位或(|)运算符来说,如果两个运算对象对应位置至少有一个为1,则结果为1,否则为0</li>
+<li>对于位异或(^)运算符来说,如果两个运算对象有且只有一个1,则结果为1,否则为0</li>
+</ul>
+<p><strong>位运算符的使用</strong></p>
+<ul>
+<li>测试一个班级内30个学生的测试成绩是否通过,则全班的测试结果可以用一个无符号整数来表示:<code>unsigned long quiz1 = 0;</code>,给这个quiz1赋一个初始值,使每一个位表示一个学生结果,</li>
+<li>假如要设置第27个学生通过测试,就设置一个值,该值只有第27位为1,其余都是0.将该值与quiz1进行位与运算,就可以将第27个学生的结果设置为1</li>
+<li>移位运算符满足左结合律</li>
+</ul>
+<h2 id="49-sizeof运算符">4.9 sizeof运算符</h2>
+<ul>
+<li>sizeof运算符返回一条表达式或者一个类型名所占的字节数,sizeof运算符满足右结合律,其所得的值是一个<code>size_t</code>类型的常量表达式,</li>
+<li>sizeof并不实际计算其运算对象的值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="k">sizeof</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+	<span class="k">sizeof</span> <span class="n">expr</span><span class="p">;</span> 	<span class="c1">//sizeof返回结果类型的大小
+</span><span class="c1"></span>
+	<span class="k">sizeof</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>	<span class="c1">//返回的是p所值对象的类型大小,这里无需关系p的指向
+</span></code></pre></div><h2 id="410-逗号运算符">4.10 逗号运算符</h2>
+<ul>
+<li>逗号运算符(,)含有两个运算对象,按照从左到右的顺序依次以此求值,首先对左侧的运算对象求值,然后将运算对象丢掉,逗号运算符真正的的结果是右侧表达式的值</li>
+</ul>
+<h2 id="411-类型转换">4.11 类型转换</h2>
+<p>不同类型但是可以<strong>相互转换</strong>的两种运算对象,在进行计算时,会先转换成相同的类型再进行计算</p>
+<p><strong>何时发生隐式类型转换</strong></p>
+<ul>
+<li>在大多数表达式中,比int类型小的整型值首先提升为较大的整数类型</li>
+<li>在条件中,非布尔值转换为布尔值</li>
+<li>初始过程中,初始值转换成变量的类型,在赋值语句中,右侧运算对象转换成左侧运算对象的类型</li>
+<li>如果算术运算或关系运算有多种类型,需要转换成同一中类型</li>
+<li>函数调用时也会发生类型转换</li>
+</ul>
+<h3 id="4111-算术转换">4.11.1 算术转换</h3>
+<p><strong>整型转换</strong></p>
+<ul>
+<li>把小整数类型转换成较大的整数类型, 对于<code>char, signed char, unsigned char, short, unsigned short, bool</code>, 会提升为<code>int</code>类型, 如果存放不了,则会转换为<code>unsigned int</code>类型. 较大的char类型会提升为<code>int, unsigned int, long, unsigned long, long long, unsigned long long</code>中最小的一种类型,</li>
+<li>整型和浮点型一起运算时,会把整型转换为浮点型</li>
+</ul>
+<p><strong>无符号类型的运算对象</strong></p>
+<ul>
+<li>如果一个运算对象是无符号类型,另一个运算对象是有符号类型的,
+<ul>
+<li>无符号类型不小于带符号类型,则带符号类型的运算对象将被转换成无符号类型的</li>
+<li>无符号类型小于带符号类型,如果无符号类型的所有值都能存储在该带符号类型中,则无符号类型转换为带符号类型,如果不能,那么带符号类型转换为无符号类型</li>
+</ul>
+</li>
+</ul>
+<h3 id="4112-其他隐式类型转换">4.11.2 其他隐式类型转换</h3>
+<ul>
+<li>数组转换成指针:在大多数用到数组的表达式中,数组自动转换为指向数组首元素的指针. 当数组用作decltype关键字的参数, 或作为取地址符, sizeof参数, 用一个引用初始化数组时都不会转换. 在数组作为函数类型时会转换</li>
+<li>指针的转换:常量整数值0和字面值nullptr能转换成任意指针类型,指向任意非常量的指针能转换为<code>void*</code>, 指向任意对象的指针能转换成<code>const void*</code>,</li>
+<li>转换成布尔类型:如果指针或算数类型的值为0,则转换结果是false, 否则结果是true</li>
+<li>转换成常量:指向非常量类型的指针可以转换成指向常量类型的指针,包括引用. 即如果一个指针指向T, 则可以转换为指向const T</li>
+</ul>
+<h3 id="4113-显式转换3">4.11.3 显式转换<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></h3>
+<p>如果必须,则可以显式的将对象强制转换成另一种类型, 称为强制类型转换. 具体为:<code>cast-name&lt;type&gt;(expression)</code>. 其中<code>type</code>是转换的目标类型, <code>expression</code>是要转换的值,<code>case-name</code>是static_cast, dynamic_cast, const_cast, reinterpret_cast的一种, cast-name指明执行的哪种转换</p>
+<ul>
+<li><strong>static_cast</strong>:任何具有明确定义的类型转换, 只要不包括底层const,都可以使用static_cast</li>
+<li><strong>dynamic_cast</strong>:支持运行时类型识别(p730)</li>
+<li><strong>const_cast</strong>:只能改变运算对象的底层const,不能改变对象的类型. 使用const_cast可以去掉对象的const性质,如果对象本身不是一个常量, 使用强制类型转换获得写权限是合法的行为, 如果对象本身是一个常量,使用const_cast执行写操作就会产生未定义的后果</li>
+<li><strong>reinterpret_cast</strong>:为运算对象的位模式提供较低层次的重新解释,</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pc</span><span class="p">;</span>
+	<span class="c1">//使用static_cast
+</span><span class="c1"></span>	<span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pc</span><span class="p">);</span> <span class="c1">//正确,但是通过p写值是未定义的行为
+</span><span class="c1"></span>	<span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pc</span><span class="p">);</span>		<span class="c1">//	错误,const_cast只修改常量属性,不能修改对象类型
+</span></code></pre></div><h2 id="412-运算符优先级表">4.12 运算符优先级表</h2>
+<p>
+
+<div class="fancybox">
+<a data-fancybox="gallery" href="https://pan-yz.chaoxing.com/thumbnail/0,0,0/23e07d61b91c465fda4417dd5e0c284e">
+<img src="https://pan-yz.chaoxing.com/thumbnail/0,0,0/23e07d61b91c465fda4417dd5e0c284e" alt=""  />
+</a>
+</div>
+
+</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>简洁是一种美德, 尽量简化你的代码&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>关于有符号位如何处理没有明确规定,强烈建议仅将位位运算符用于处理无符号类型&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>强制类型转换干扰了正常的类型检查,程序应避免使用强制类型转换&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+                    <div class="post_footer">
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        奋斗途中，不轻言放弃
+    </div>
+
+    <div class="footer_slogan">
+        <span></span>
+    </div>
+</footer>
+    <script src="https://catfishcoder.github.io/js/jquery-3.5.1.min.js"></script>
+<link href="https://catfishcoder.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://catfishcoder.github.io/js/fancybox.min.js"></script>
+<script src="https://catfishcoder.github.io/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

@@ -6,7 +6,25 @@
     <description>Recent content in Posts on zyanjun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 17:23:38 +0800</lastBuildDate><atom:link href="https://catfishcoder.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jan 2022 14:23:44 +0800</lastBuildDate><atom:link href="https://catfishcoder.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cpp_day7</title>
+      <link>https://catfishcoder.github.io/post/cpp_day7/</link>
+      <pubDate>Mon, 10 Jan 2022 14:23:44 +0800</pubDate>
+      
+      <guid>https://catfishcoder.github.io/post/cpp_day7/</guid>
+      <description>5 语句 5.1 简单语句 语句顺序执行,且以分号结尾.关键在于使用控制流语句以支持复杂的执行路径 空语句:当在程序中,语法上需要一条语句,逻辑上不需要,此时就应该使用空语句,一般情况是,当循环的全部工作在条件部分</description>
+    </item>
+    
+    <item>
+      <title>Cpp_day6</title>
+      <link>https://catfishcoder.github.io/post/cpp_day6/</link>
+      <pubDate>Sat, 08 Jan 2022 11:52:05 +0800</pubDate>
+      
+      <guid>https://catfishcoder.github.io/post/cpp_day6/</guid>
+      <description>4 表达式 表达式由一个或多个运算对象(operand)组成，对表达式求值将得到一个结果(result),字面值和变量是最简单的表达式(expression),其结果就是字面值和表达式的值，将**运算符(</description>
+    </item>
+    
     <item>
       <title>Cpp_day5</title>
       <link>https://catfishcoder.github.io/post/cpp_day5/</link>
