@@ -196,8 +196,19 @@
 <h3 id="551-break语句">5.5.1 break语句</h3>
 <p><strong>break语句</strong>负责终止离他最近的while, do while, for,或者switch语句, 并从这些语句之后的第一条语句开始执行</p>
 <h3 id="552-continue语句">5.5.2 continue语句</h3>
-<p><strong>continue语句</strong>终止最近的循环中的当前迭代并立即开始下一次迭代</p>
-</div>
+<p><strong>continue语句</strong>终止最近的循环中的当前迭代并立即开始下一次迭代,只能出现在for, while和do while语句中,作用于离他最近的循环</p>
+<h3 id="552-goto语句">5.5.2 goto语句</h3>
+<ul>
+<li><strong>goto语句</strong>的作用是从goto语句无条件跳转到同一函数内的另一条语句.语法形式为:<code>goto label;</code>,</li>
+<li>标签标识符独立于其他变量,所以可以和同名变量共存</li>
+<li>goto语句不能绕过带初始化的变量定义</li>
+<li><strong>goto语句使得程序更加复杂且不利于理解,所以不要在程序中使用goto语句</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++">	<span class="nl">begin</span><span class="p">:</span>
+	<span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">get_size</span><span class="p">();</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">sz</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">goto</span> <span class="n">begin</span><span class="p">;</span>
+</code></pre></div></div>
                     <div class="post_footer">
                         
                         <div class="meta">
